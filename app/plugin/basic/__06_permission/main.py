@@ -154,7 +154,9 @@ async def grant(target: Union[Friend, Member], sender: Union[Friend, Group], cmd
                     return message("master level 不可更改！若想进行修改请直接修改配置文件！").target(sender).send()
             elif result == 3:
                 if not Permission.manual(target, 4):
-                    return message("权限不足，你必须达到等级4(master level)才可修改超级管理员权限！").target(sender).send()  # noqa: E501
+                    return (
+                        message("权限不足，你必须达到等级4(master level)才可修改超级管理员权限！").target(sender).send()
+                    )  # noqa: E501
                 ADMIN_USER.remove(target)
                 if level == 2:
                     GROUP_ADMIN_USER.append(target)

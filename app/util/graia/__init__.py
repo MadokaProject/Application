@@ -1,4 +1,5 @@
 """对Ariadne 相关功能进行封装"""
+
 from graia.ariadne import Ariadne as Ariadne
 from graia.ariadne.event.message import ActiveFriendMessage as ActiveFriendMessage
 from graia.ariadne.event.message import ActiveGroupMessage as ActiveGroupMessage

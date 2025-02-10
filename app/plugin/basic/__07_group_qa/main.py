@@ -40,7 +40,9 @@ async def add_reply(target: Member, sender: Group, source: Source, cmd: Arpamar)
             return msg.display
 
     qa = await get_config("group_qa", sender) or []
-    message("请在180秒内输入关键词, 若关键词一致则修改相关回答内容, 发送 #取消# 取消添加/修改").target(sender).quote(source).send()
+    message("请在180秒内输入关键词, 若关键词一致则修改相关回答内容, 发送 #取消# 取消添加/修改").target(sender).quote(
+        source
+    ).send()
     keyword = await DefaultFunctionWaiter(answer, [GroupMessage]).wait(180, "TimeoutError")
     if keyword == "TimeoutError":
         return message("等待超时！").target(sender).send()
