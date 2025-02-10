@@ -170,7 +170,9 @@ async def rank(target: Union[Friend, Member], sender: Union[Friend, Group]):
 @command.parse("auto")
 async def auto(target: Union[Friend, Member], sender: Union[Friend, Group], cmd: Arpamar):
     await BotGame(target.id).auto_signin(cmd.query("status"))
-    return message("开启成功，将于每日 8 点为您自动签到！" if cmd.query("status") else "关闭成功！").target(sender).send()  # noqa: E501
+    return (
+        message("开启成功，将于每日 8 点为您自动签到！" if cmd.query("status") else "关闭成功！").target(sender).send()
+    )  # noqa: E501
 
 
 @sche.schedule(timers.crontabify("0 7 * * * 0"))

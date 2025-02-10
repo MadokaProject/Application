@@ -1,6 +1,7 @@
 """
 Xenon 管理 https://github.com/McZoo/Xenon/blob/master/lib/control.py
 """
+
 from functools import wraps
 from typing import Union
 

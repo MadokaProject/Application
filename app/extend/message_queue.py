@@ -1,4 +1,5 @@
 """消息队列，控制消息发送频率"""
+
 import asyncio
 from queue import Queue
 from time import sleep
